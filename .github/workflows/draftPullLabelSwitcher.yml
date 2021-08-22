@@ -1,15 +1,17 @@
+name: Draft Label Switcher (title)
+
 on:
   pull_request:
-    types: [opened, ready_for_review]
+    types: [opened, ready_for_review, converted_to_draft]
 
 jobs:
-  foo:
+  draft_label_switcher:
     runs-on: ubuntu-latest
-    name: fooName
+    name: Draft Label Switcher (name in text)
     steps:
     - name: label swapping
       uses: jinmayamashita/ready-for-review@1.0.0
       with:
-        in-progress-label: 'bug'
-        ready-for-review-label: 'duplicate'
+        in-progress-label: '**draft PR**'
+        ready-for-review-label: '**in Bearbeitung**'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
