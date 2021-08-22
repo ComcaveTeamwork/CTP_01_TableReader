@@ -1,7 +1,7 @@
 # TableReader - Read tables in markdown format and present in html  
 
 ## Motivation
-
+Test
 Der Sinn dieses Projekts ist die gemeinsame Entwicklung einer Software mit Hilfe der GitHub Plattform. Die Nutzung der Werkzeuge von GitHub, die Arbeit an gemeinsamen Repositories und das Teamwork selbst sind der Hauptzweck des Projekts ("Der Weg ist das Ziel"). 
 
 Als Beispielprojekt soll die Entwicklung einer HTML Seite dienen, auf der mittels Javascript eine Datei im Markdown Format eingelesen wird und in dieser enthaltene Tabellen auf der HTML Seite wiedergegeben werden können. Der Ausgangspunkt soll hierbei der Wissensstand sein, in wir im Programmierkurs vor Beginn der Sommerpause hatten (also 2 Wochen Unterricht mit Javascript). Weitere Entwicklungsschritte wären dann Manipulationen der eingelesenen Tabellen (Sortieren, Filtern etc.) sowie Interaktion mit einer Datenbank. 
