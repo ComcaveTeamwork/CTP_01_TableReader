@@ -1,4 +1,4 @@
-name: label-automation
+name: label-automation-on-close
 
 on:
   issues:
@@ -7,7 +7,7 @@ on:
     types: [closed]
 
 jobs:
-  automate-labels:
+  automate-labels-close:
     runs-on: ubuntu-latest
     steps:
       - name: remove labels on close
