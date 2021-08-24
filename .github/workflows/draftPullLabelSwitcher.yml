@@ -13,5 +13,5 @@ jobs:
       uses: jinmayamashita/ready-for-review@1.0.0
       with:
         in-progress-label: '++draft PR++'
-        ready-for-review-label: '++PR++'
+        ready-for-review-label: ''
         repo-token: ${{ secrets.GITHUB_TOKEN }}
