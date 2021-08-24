@@ -11,5 +11,12 @@ jobs:
     steps:
       - name: add draft label
         uses: upinetree/labeler@fix-pull-request-param
+        if: github.event.action == 'converted_to_draft'
         with:
           add-labels: "++draft PR++"
+      - name: remove draft label
+        uses: upinetree/labeler@fix-pull-request-param
+        if: github.event.action == 'ready_for_review'
+        with:
+          remove-labels: "++draft PR++"
+
