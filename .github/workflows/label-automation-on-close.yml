@@ -1,0 +1,16 @@
+name: label-automation
+
+on:
+  issues:
+    types: [closed]
+  pull_request:
+    types: [closed]
+
+jobs:
+  automate-labels:
+    runs-on: ubuntu-latest
+    steps:
+      - name: remove labels on close
+        uses: upinetree/labeler@fix-pull-request-param
+        with:
+          remove-labels: "-- in Bearbeitung, ++PR++"
