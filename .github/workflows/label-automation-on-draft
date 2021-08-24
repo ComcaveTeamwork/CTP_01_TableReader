@@ -1,22 +1,3 @@
-
-on:
-  pull_request:
-    types: [opened, ready_for_review, converted_to_draft]
-
-jobs:
-  draft_label_switcher:
-    runs-on: ubuntu-latest
-    name: Draft Label Switcher (name in text)
-    steps:
-    - name: label swapping
-      uses: jinmayamashita/ready-for-review@1.0.0
-      with:
-        in-progress-label: '++draft PR++'
-        ready-for-review-label: ''
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        
-        
-        
 name: label-automation-on-draft
 
 on:
@@ -26,6 +7,7 @@ on:
 jobs:
   automate-labels:
     runs-on: ubuntu-latest
+    name: automate labels for draft PR (name in text)
     steps:
       - name: add draft label
         uses: upinetree/labeler@fix-pull-request-param
