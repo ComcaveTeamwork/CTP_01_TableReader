@@ -8,9 +8,9 @@ Das Ziel dieses Projekts ist die gemeinsame Entwicklung einer Software mit Hilfe
 
 Als Beispielprojekt soll die Entwicklung einer HTML Seite dienen, auf der mittels Javascript eine Datei im Markdown Format eingelesen wird und in dieser enthaltene Tabellen auf der HTML Seite wiedergegeben werden können. Der Ausgangspunkt soll hierbei der Wissensstand sein, in wir im Programmierkurs vor Beginn der Sommerpause hatten (also 2 Wochen Unterricht mit Javascript). Weitere Entwicklungsschritte wären dann Manipulationen der eingelesenen Tabellen (Sortieren, Filtern etc.) sowie Interaktion mit einer Datenbank. 
 
-## Workflow
+## **Wichtig**: Workflow
 
-Der Workflow wird im Detail im [**Wiki**](https://github.com/ComcaveTeamwork/CTP_01_TableReader/wiki/Workflow) beschrieben.
+Der Workflow wird im Detail im [**Wiki**](https://github.com/ComcaveTeamwork/CTP_01_TableReader/wiki/Workflow) beschrieben. Bitte diesen Workflow einhalten.
 
 
 ## Koordination
