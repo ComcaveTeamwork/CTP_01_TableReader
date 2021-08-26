@@ -14,6 +14,7 @@ const ul1 = document.getElementById("ul1");
 dispBtn1.addEventListener("click", showList);
 pushNames();
 printToConsole(persons);
+readDataFromList("Liste.md");
 
 // --------------------------------------------------------------------------------------
 
@@ -65,4 +66,19 @@ function pushNames (){
 // Simple Ausgabe in die Konsole.
 function printToConsole(outputStr) {
     console.log(outputStr);
+}
+
+// readDataFromList: Über die Fetch-Methode kann man einen HTTP-Request stellen.
+// Im Grunde möchte diese Funktion also nur mit der Datei "Liste.md" kommunizieren,
+// die sich ebenfalls in unserem lokalen Verzeichnis, beziehungsweise auf
+// unserem lokalen Server befindet. Dann wird der Body des Responses in eine
+// Text-Repräsentation umgewandelt und in die Konsole ausgegeben.
+// Der "path"-Parameter kann einen beliebigen Pfad wie z.B "AndereListe.md" entgegen
+// nehmen, was das gleiche Resultat hervorbringen würde, sofern die Datei gegeben ist.
+
+function readDataFromList (path){
+
+    var data = fetch(path).
+    then(data => data.text()).
+    then(data => console.log(data));
 }
