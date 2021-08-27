@@ -7,7 +7,6 @@
 let persons = [];
 const dispBtn1 = document.getElementById("dispBtn1");
 const ul1 = document.getElementById("ul1");
-let local = false;
 
 // --------------------------------------------------------------------------------------
 
@@ -69,16 +68,10 @@ function printToConsole(outputStr) {
     console.log(outputStr);
 }
 
-// readDataFromList: Es wird ein XMLHttpRequest-Objekt erstellt, welches die HTTP-Methode "GET" und einen Pfad zugewiesen bekommt.
-// Daraufhin wird dem LoadEventListener eine anonyme Funktion hinzugefügt, die den Status des Requests überprüft und bei Erfolg
-// den .responseText des XMLHttpRequests in die Konsole ausgibt. Statusmeldung zwischen 200-299 gelten als "erfolgreich", während alle anderen für "nicht erfolgreich" stehen.
-// Bei Misserfolg wird die jeweilige Fehlermeldung ebenfalls in die Konsole ausgegeben.
-// Diese Funktion arbeitet jetzt sowohl mit lokalen, als auch mit externen Quellen.
-
 function readDataFromList(path)
 {
     var request = new XMLHttpRequest();
-    request.open("GET", path);
+    request.open("GET", "Liste.md");
 
     request.addEventListener("load", function (event){
 
@@ -86,7 +79,7 @@ function readDataFromList(path)
         console.log(request.responseText);
 
         else console.warn(request.statusText, request.responseText);
-        
+
     });
 
     request.send();
