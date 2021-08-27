@@ -32,5 +32,6 @@ jobs:
       if: github.event_name == 'pull_request' 
       with:
         project: 'https://github.com/ComcaveTeamwork/CTP_01_TableReader/projects/3'
+        column_name: 'Dependent - Warteschlange'
 
   
