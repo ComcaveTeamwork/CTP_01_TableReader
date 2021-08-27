@@ -71,7 +71,7 @@ function printToConsole(outputStr) {
 function readDataFromList(path)
 {
     var request = new XMLHttpRequest();
-    request.open("GET", "Liste.md");
+    request.open("GET", path);
 
     request.addEventListener("load", function (event){
 
