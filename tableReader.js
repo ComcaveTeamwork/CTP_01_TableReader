@@ -65,9 +65,8 @@ function pushNames (){
     });
     
     persons.push({
-        firstName: "Cahit"
+        firstName: "Cahit",
         lastName: "Arf"
-    
     });
 
 }
