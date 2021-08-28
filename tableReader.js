@@ -53,12 +53,23 @@ function pushNames (){
         firstName: "Berta",
         lastName: "Bertelsmann"
     });
-  
-  persons.push({
-    firstName: "Julius",
-    lastName: "Cäsar"
-});
-  
+    
+    persons.push({
+        firstName: "Julius",
+        lastName: "Cäsar" 
+    });
+    
+    persons.push({
+       firstName: "Sabiha",
+       lastName: "Goekcen"
+    });
+    
+    persons.push({
+        firstName: "Cahit"
+        lastName: "Arf"
+    
+    });
+
 }
 
 
