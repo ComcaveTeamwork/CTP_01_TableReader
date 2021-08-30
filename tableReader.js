@@ -1,6 +1,3 @@
-
-// tableReader.js - Letze Änderung: Maurice König
-
 "use strict";
 
 // Variablen, die zwischengespeichert werden um hier im Script damit arbeiten zu können.
