@@ -35,42 +35,22 @@ function showList() {
 
 // pushNames: Es werden Objekte mit zwei internen Variablen "firstName" und "lastName" erstellt. Die Wertzuweisungen erfolgen ebenfalls auf direktem Wege. Danach werden die
 // Objekte in das Array "persons" gepusht.
+// Adding Indu-Pushfunction.
+function pushName(fName, lName) {
+    persons.push({
+        firstName: fName,
+        lastName: lName
+    });
+    }
 function pushNames (){
 
-    const person = {
-        firstName: "Anton",
-        lastName: "Mustermann"
-    }
-    
-    persons.push(person);
-    
-    persons.push({
-        firstName: "Moritz",
-        lastName: "Mustermann"
-    });
-    
-    persons.push({
-        firstName: "Berta",
-        lastName: "Bertelsmann"
-    });
-    
-    persons.push({
-        firstName: "Julius",
-        lastName: "Cäsar" 
-    });
-    
-    persons.push({
-       firstName: "Sabiha",
-       lastName: "Goekcen"
-    });
-    
-    persons.push({
-        firstName: "Cahit",
-        lastName: "Arf"
-    });
-
+    pushName("Anton","Mustermann");
+    pushName("Moritz","Mustermann");
+    pushName("Berta","Bertelsmann");
+    pushName("Julius","Cäsar");
+    pushName("Sabiha","Goekcen"); // added new names
+    pushName("Cahit","Arf");
 }
-
 
 // Simple Ausgabe in die Konsole.
 function printToConsole(outputStr) {
