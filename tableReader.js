@@ -1,9 +1,10 @@
+
 "use strict";
 
 // Variablen, die zwischengespeichert werden um hier im Script damit arbeiten zu können.
 let persons = [];
 const dispBtn1 = document.getElementById("dispBtn1");
-const ul1 = document.getElementById("ul1"); 
+const ul1 = document.getElementById("ul1");
 
 // --------------------------------------------------------------------------------------
 
@@ -11,6 +12,7 @@ const ul1 = document.getElementById("ul1");
 dispBtn1.addEventListener("click", showList);
 pushNames();
 printToConsole(persons);
+readDataFromFile("Liste.md");
 
 // --------------------------------------------------------------------------------------
 
@@ -28,48 +30,50 @@ function showList() {
         newListElement.innerText = persons[i].firstName + " " + persons[i].lastName;
         ul1.appendChild(newListElement);
     }
+    document.getElementById('dispBtn1').disabled = true;
 }
 
 // pushNames: Es werden Objekte mit zwei internen Variablen "firstName" und "lastName" erstellt. Die Wertzuweisungen erfolgen ebenfalls auf direktem Wege. Danach werden die
 // Objekte in das Array "persons" gepusht.
+// Adding Indu-Pushfunction.
+function pushName(fName, lName) {
+    persons.push({
+        firstName: fName,
+        lastName: lName
+    });
+    }
 function pushNames (){
 
-    const person = {
-        firstName: "Anton",
-        lastName: "Mustermann"
-    }
-    
-    persons.push(person);
-    
-    persons.push({
-        firstName: "Moritz",
-        lastName: "Mustermann"
-    });
-    
-    persons.push({
-        firstName: "Berta",
-        lastName: "Bertelsmann"
-    });
-    
-    persons.push({
-        firstName: "Julius",
-        lastName: "Cäsar" 
-    });
-    
-    persons.push({
-       firstName: "Sabiha",
-       lastName: "Goekcen"
-    });
-    
-    persons.push({
-        firstName: "Cahit",
-        lastName: "Arf"
-    });
-
+    pushName("Anton","Mustermann");
+    pushName("Moritz","Mustermann");
+    pushName("Berta","Bertelsmann");
+    pushName("Julius","Cäsar");
+    pushName("Sabiha","Goekcen"); // added new names
+    pushName("Cahit","Arf");
 }
-
 
 // Simple Ausgabe in die Konsole.
 function printToConsole(outputStr) {
     console.log(outputStr);
 }
+
+// siehe PR-Beschreibung
+// PR link: https://github.com/ComcaveTeamwork/CTP_01_TableReader/pull/44
+// Wiki Artikel: https://github.com/ComcaveTeamwork/CTP_01_TableReader/wiki/XMLHttpRequest
+function readDataFromFile (path)
+{
+    var request = new XMLHttpRequest();
+    request.open("GET", path);
+    request.addEventListener("load", function (event){
+
+        if (request.status >= 200 & request.status < 300)
+        console.log(request.responseText);
+
+        else console.warn(request.statusText, request.responseText);
+
+    });
+
+    request.send();
+}
+
+
