@@ -1,6 +1,9 @@
 
 /** Styles */
-
+#container
+{
+    display: flex;
+}
 /* 
 button {
     display: block;
