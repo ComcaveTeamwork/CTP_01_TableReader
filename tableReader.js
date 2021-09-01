@@ -76,3 +76,10 @@ function readDataFromFile (path)
 }
 
 
+/**Beschreibung des Arbeitspakets
+
+Der aus Datei der Datei Liste.md eingelesenen String soll zeilenweise in einem Array gespeichert werden, also pro Zeile der Datei soll das Array ein Element vom Typ String haben.
+
+Zusatzinformationen
+
+Testweise Ausgabe in der Konsole */
