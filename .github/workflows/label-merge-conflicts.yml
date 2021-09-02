@@ -17,5 +17,5 @@ jobs:
         with:
           dirtyLabel: "++Merge Conflict++"
           repoToken: "${{ secrets.MY_ACTION_TOKEN }}"
-          commentOnDirty: "This pull request has conflicts, please resolve those before we can evaluate the pull request."
+          commentOnDirty: "Auto Comment: Merge Conflict in Pull Request detected by automation."
        
