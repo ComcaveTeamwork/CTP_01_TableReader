@@ -54,6 +54,8 @@ function pushNames (){
     pushName("Moritz","Mustermann");
     pushName("Berta","Bertelsmann");
     pushName("Julius","Cäsar");
+    pushName("Sabiha","Goekcen"); // added new names
+    pushName("Cahit","Arf");
 }
 
 // Simple Ausgabe in die Konsole.
@@ -68,7 +70,6 @@ function readDataFromFile (path)
 {
     var request = new XMLHttpRequest();
     request.open("GET", path);
-
     request.addEventListener("load", function (event){
 
         if (request.status >= 200 & request.status < 300)
