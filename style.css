@@ -101,6 +101,7 @@ body{
 
 #absolute-positioned-logo
 {
+    z-index: 1;
     position: absolute;
     left: 2.5%;
 }
@@ -145,6 +146,7 @@ button
     border-radius: 8px;
     background-color: #1b1b1c;
     color: white;
+    z-index: 5;
     
 }
 
