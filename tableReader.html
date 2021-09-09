@@ -1,67 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <title>Table Reader</title>
-       <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
+
     <body >
-        <h2>Einlesen von Daten aus Tabellen in Markdown Format und Ausgabe in HTML</h2>
-        
-        <p id="para1"> 
-            
-        </p>
-            <div>
-                <button id="dispBtn2">Datei auswählen</button>
-                <button id="dispBtn3">Datei laden (HTTP request)</button>
-                <button id="dispBtn4">Datei laden files API</button>
+        <!-- Header -->
+        <header>
+            <div id="absolute-positioned-logo">
+                <img width="120px" height="120" src="Resources/cc_logo.png">
             </div>
-            <p id="para2"> 
-        Zum Anzeigen der Namensliste bitte den Button drücken.
-        </p>
-
-         <div id="container">
-            <div id="unorderedList">
-                <button id="dispBtn1">Display List</button>
-                <ul id="ul1">
-                </ul>
+            <div id="header">
+                <div id ="header-text">Table Reader Project</CCP></div>
             </div>
+        </header>
 
-            <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            <div id="orderedList">
-                <button id="dispBtn2">Display Ordered List</button>
-                <ol id="ol1" type=1>
-                </ol>
+        <!-- Navigation -->
+        <nav>
+            <div id="navigation">
+                <button id="reload-button">Reload</button>
+                <button id="dispBtn1">Listen anzeigen</button>
+                <button id="sort-lists-button">Listen sortieren</button>
+                <button id="dispBtn5">Tabellen anzeigen</button>
+                <button id="dispBtn2">Computer durchsuchen</button>
+                <button id="dispBtn3">Datei laden (via XMLRequest)</button>
+                <button id="dispBtn4">Datei laden (via FileReader)</button>
             </div>
-        </div>     
-
+        </nav>
         <hr>
 
-            <div>
-                <button id="dispBtn5">display table</button>
+        <!--- Beinhaltet die Areas -->
+        <div id="flex-container">
+
+            <div id="list-area">
+
+                <!-- Indu -->
+                <div id="flex-container">
+
+                    <div id="unorderedList">
+                        <ul id="ul1"></ul>
+                    </div>
+
+                    <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div> <!-- Empty Space -->
+
+                    <div id="orderedList">
+                        <ol id="ol1" type=1></ol>
+                    </div>
+
+                </div>     
+    
             </div>
 
-        <!-- Tabellenformat  -->
-        <div >
-            <p>
-            <table id="table1">
-                <thead>  
-                    <tr>
-                        <th id="table1Header1">Lorem</th>
-                        <th id="table1Header2">Ipsum</th>
-                    </tr>
-                </thead>
+            <div id="table-area">
 
-                <tbody id="table1body">
+                <!-- Daniel  -->
 
-                </tbody>
+            <div id="flex-spaced-evenly">
 
-            </table>
+                <div id="table-description">Table 1</div>
+                <div id="table-description">Table 2</div>
+                <div id="table-description">Table 3</div>
+                <div id="table-description">Table 4</div>
 
-            </p> 
-        </div>
-            
+            </div>
+
+            <div id="flex-spaced-evenly">
+
+                <span id="table-wrapper">
+                    <table id="table1">
+                        <thead>  
+                            <tr>
+                                <th id="table1Header1">Lorem</th>
+                                <th id="table1Header2">Ipsum</th>
+                            </tr>
+                        </thead>
+    
+                        <tbody id="table1body"></tbody>
+    
+                    </table>
+                </span>
+
+
+                <span id="table-wrapper">
+                    <table id="table2">
+                        <thead>  
+                            <tr>
+                                <th id="table2Header1">Lorem</th>
+                                <th id="table2Header2">Ipsum</th>
+                            </tr>
+                        </thead>
+    
+                <tbody id="table2body"></tbody>
+                    </table>
+                </span>
+
+                <span id="table-wrapper">
+                    <table id="table3">
+                        <thead>  
+                            <tr>
+                                <th id="table3Header1">Lorem</th>
+                                <th id="table3Header2">Ipsum</th>
+                            </tr>
+                     </thead>
+                
+                        <tbody id="table3body"></tbody>
+                
+                
+                    </table>
+                </span>
+
+                <span id="table-wrapper">
+                    <table id="table4">
+                        <thead>  
+                            <tr>
+                             <th id="table4Header1">Lorem</th>
+                                <th id="table4Header2">Ipsum</th>
+                         </tr>
+                        </thead>
+    
+                        <tbody id="table4body"></tbody>
+                    </table>
+                </span>
+
+                 </div>
+            </div>
+        </div>       
     </body>
 
     <script src="tableReader.js"></script> 
+
 </html>
