@@ -5,6 +5,7 @@
 let persons = [];
 const dispBtn1 = document.getElementById("dispBtn1");
 const ul1 = document.getElementById("ul1");
+const ol1 = document.getElementById("ol1");
 
 // --------------------------------------------------------------------------------------
 
@@ -26,9 +27,14 @@ function showList() {
 
     for (let i = 0; i < persons.length; i++){
 
-        let newListElement = document.createElement("li");
-        newListElement.innerText = persons[i].firstName + " " + persons[i].lastName;
-        ul1.appendChild(newListElement);
+        let newOrderedListElement = document.createElement("li");
+        let newUnorderedListElement = document.createElement("li");
+
+        newOrderedListElement.innerText = persons[i].firstName + " " + persons[i].lastName;
+        newUnorderedListElement.innerText = persons[i].firstName + " " + persons[i].lastName;
+
+        ol1.appendChild(newOrderedListElement);
+        ul1.appendChild(newUnorderedListElement);
     }
     document.getElementById('dispBtn1').disabled = true;
 }
