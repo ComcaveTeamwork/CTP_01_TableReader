@@ -4,12 +4,23 @@
 // Variablen, die zwischengespeichert werden um hier im Script damit arbeiten zu können.
 let persons = [];
 const dispBtn1 = document.getElementById("dispBtn1");
+const dispBtn5 = document.getElementById("dispBtn5"); // display table button
 const ul1 = document.getElementById("ul1");
 const ol1 = document.getElementById("ol1");
+
+// Table1 related data
+const table1 = document.getElementById("table1");
+const table1Body = document.getElementById("table1body");
+const table1Header1 = document.getElementById("table1Header1");
+const table1Header2 = document.getElementById("table1Header2");
+const table1Column1HeaderValue = "Vorname";
+const table1Column2HeaderValue = "Nachname";
+///
 
 // --------------------------------------------------------------------------------------
 
 // Die eigentlichen Funktionsaufrufe!
+dispBtn5.addEventListener("click", displayTable);
 dispBtn1.addEventListener("click", showList);
 pushNames();
 printToConsole(persons);
@@ -36,18 +47,21 @@ function showList() {
         ol1.appendChild(newOrderedListElement);
         ul1.appendChild(newUnorderedListElement);
     }
+    
     document.getElementById('dispBtn1').disabled = true;
 }
 
 // pushNames: Es werden Objekte mit zwei internen Variablen "firstName" und "lastName" erstellt. Die Wertzuweisungen erfolgen ebenfalls auf direktem Wege. Danach werden die
 // Objekte in das Array "persons" gepusht.
 // Adding Indu-Pushfunction.
+
 function pushName(fName, lName) {
     persons.push({
         firstName: fName,
         lastName: lName
     });
     }
+
 function pushNames (){
 
     pushName("Anton","Mustermann");
@@ -82,4 +96,29 @@ function readDataFromFile (path)
     request.send();
 }
 
+function displayTable (){
+
+    if (table1Body.children.length == persons.length) return;
+
+    table1Header1.innerText = table1Column1HeaderValue;
+    table1Header2.innerText = table1Column2HeaderValue;
+
+    for (let i = 0; i < persons.length; i++){
+        
+        var newRow = createElement("tr");
+        var firstColumn = createElement("td");
+        firstColumn.innerText = persons[i].firstName;
+        var secondColumn = createElement("td");
+        secondColumn.innerText = persons[i].lastName;
+        newRow.appendChild(firstColumn);
+        newRow.appendChild(secondColumn);
+        table1Body.appendChild(newRow);
+    }
+}
+
+
+function createElement (name){
+
+    return document.createElement(name);
+}
 
