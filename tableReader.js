@@ -3,10 +3,15 @@
 
 // Variablen, die zwischengespeichert werden um hier im Script damit arbeiten zu können.
 let persons = [];
-const dispBtn1 = document.getElementById("dispBtn1");
-const dispBtn5 = document.getElementById("dispBtn5"); // display table button
+const pseudoConsole = document.getElementById("pseudo-console");
+// Listen-Elemente
 const ul1 = document.getElementById("ul1");
 const ol1 = document.getElementById("ol1");
+
+// Buttons
+const dispBtn1 = document.getElementById("dispBtn1");
+const dispBtn5 = document.getElementById("dispBtn5"); // display table button
+const reloadButton = document.getElementById("reload-button");
 
 // Table1 related data
 const table1 = document.getElementById("table1");
@@ -15,13 +20,17 @@ const table1Header1 = document.getElementById("table1Header1");
 const table1Header2 = document.getElementById("table1Header2");
 const table1Header1Value = "Vorname";
 const table1Header2Value = "Nachname";
-///
 
 // --------------------------------------------------------------------------------------
 
 // Die eigentlichen Funktionsaufrufe!
-dispBtn5.addEventListener("click", displayTable);
+
+// EventListener laden
+dispBtn5.addEventListener("click", displayTables);
 dispBtn1.addEventListener("click", showList);
+reloadButton.addEventListener("click", reloadPage);
+
+
 pushNames();
 printToConsole(persons);
 readDataFromFile("Liste.md");
@@ -56,10 +65,12 @@ function showList() {
 // Adding Indu-Pushfunction.
 
 function pushName(fName, lName) {
+
     persons.push({
         firstName: fName,
         lastName: lName
     });
+
     }
 
 function pushNames (){
@@ -74,7 +85,9 @@ function pushNames (){
 
 // Simple Ausgabe in die Konsole.
 function printToConsole(outputStr) {
+
     console.log(outputStr);
+    pseudoConsole.innerText = outputStr;
 }
 
 // siehe PR-Beschreibung
@@ -86,8 +99,11 @@ function readDataFromFile (path)
     request.open("GET", path);
     request.addEventListener("load", function (event){
 
-        if (request.status >= 200 & request.status < 300)
-        console.log(request.responseText);
+        if (request.status >= 200 & request.status < 300){
+
+            console.log(request.responseText);
+            pseudoConsole.innerText = request.responseText;
+        }
 
         else console.warn(request.statusText, request.responseText);
 
@@ -96,7 +112,7 @@ function readDataFromFile (path)
     request.send();
 }
 
-function displayTable (){
+function displayTables (){
 
     if (table1Body.children.length == persons.length) return;
 
@@ -120,5 +136,10 @@ function displayTable (){
 function createElement (name){
 
     return document.createElement(name);
+}
+
+function reloadPage ()
+{
+    window.document.location.reload();
 }
 
