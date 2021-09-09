@@ -13,8 +13,8 @@ const table1 = document.getElementById("table1");
 const table1Body = document.getElementById("table1body");
 const table1Header1 = document.getElementById("table1Header1");
 const table1Header2 = document.getElementById("table1Header2");
-const table1Column1HeaderValue = "Vorname";
-const table1Column2HeaderValue = "Nachname";
+const table1Header1Value = "Vorname";
+const table1Header2Value = "Nachname";
 ///
 
 // --------------------------------------------------------------------------------------
@@ -100,8 +100,8 @@ function displayTable (){
 
     if (table1Body.children.length == persons.length) return;
 
-    table1Header1.innerText = table1Column1HeaderValue;
-    table1Header2.innerText = table1Column2HeaderValue;
+    table1Header1.innerText = table1Header1Value;
+    table1Header2.innerText = table1Header2Value;
 
     for (let i = 0; i < persons.length; i++){
         
