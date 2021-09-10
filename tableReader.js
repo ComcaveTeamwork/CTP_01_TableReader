@@ -21,7 +21,7 @@ readDataFromFile("Liste.md");
 
 // --------------------------------------------------------------------------------------
 
-//Implementing file upload function
+//Implementing file upload function and displaying filename in the console
 
 dispBtn2.addEventListener("click", load_File);
 file.addEventListener("change", printFileLocation);
