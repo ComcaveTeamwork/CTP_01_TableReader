@@ -1,6 +1,9 @@
 
 /** Styles */
-
+#container
+{
+    display: flex;
+}
 /* 
 button {
     display: block;
@@ -30,6 +33,8 @@ h1.night{
 p.night{
     color: #eee;
 } */
+
+
 
 /* Tabellenformat */
 table,

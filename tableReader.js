@@ -5,8 +5,11 @@
 let persons = [];
 const dispBtn1 = document.getElementById("dispBtn1");
 const ul1 = document.getElementById("ul1");
+
 var dispBtn2 = document.getElementById("dispBtn2");
 var file = document.getElementById("file");
+const ol1 = document.getElementById("ol1");
+
 
 // --------------------------------------------------------------------------------------
 
