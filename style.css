@@ -106,7 +106,7 @@ body{
     left: 2.5%;
 }
 
-#centered-horizontally
+.centered-horizontally
 {
     text-align: center;
 }
@@ -117,7 +117,7 @@ body{
 }
 
 
-#table-description
+.table-description
 {
     display: flex;
     font-size: 35px;
@@ -162,20 +162,20 @@ h1,h2,h3,h4,h5,h6
     color: gainsboro;
 }
 
-#flex-container
+.flex-container
 {
     display: flex;
     justify-content: center;
 }
 
-#flex-spaced-evenly
+.flex-spaced-evenly
 {
     display: flex;
     justify-content: space-evenly;
 }
 
 
-#relative-parent
+.relative-parent
 {
     position: relative;
 }
