@@ -7,23 +7,13 @@ const dispBtn1 = document.getElementById("dispBtn1");
 const ul1 = document.getElementById("ul1");
 var dispBtn2 = document.getElementById("dispBtn2");
 var file = document.getElementById("file");
-var scriptSource = (function(scripts) {
-    var scripts = document.getElementsByTagName('script'),
-        script = scripts[scripts.length - 1];
 
-    if (script.getAttribute.length !== undefined) {
-        return script.src
-    }
-
-    return script.getAttribute('src', -1)
-}());
 // --------------------------------------------------------------------------------------
 
 // Die eigentlichen Funktionsaufrufe!
 dispBtn1.addEventListener("click", showList);
 pushNames();
 printToConsole(persons);
-
 readDataFromFile("Liste.md");
 
 // --------------------------------------------------------------------------------------
@@ -40,7 +30,7 @@ function load_File(){
 
 function printFileLocation() {
     if (this.files && this.files[0]) {
-        printToConsole(this.files[0].name + "  " + this.files[0].scriptSource);
+        printToConsole(this.files[0].name);
         }
 }
 
