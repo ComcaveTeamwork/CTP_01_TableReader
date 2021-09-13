@@ -1,6 +1,9 @@
 
 /** Styles */
-
+#container
+{
+    display: flex;
+}
 /* 
 button {
     display: block;
@@ -31,6 +34,8 @@ p.night{
     color: #eee;
 } */
 
+
+
 /* Tabellenformat */
 table,
 td,
@@ -43,3 +48,6 @@ table {
     border-collapse: collapse;
   }
  
+  #file{
+    display: none;
+  }

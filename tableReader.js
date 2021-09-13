@@ -6,6 +6,11 @@ let persons = [];
 const dispBtn1 = document.getElementById("dispBtn1");
 const ul1 = document.getElementById("ul1");
 
+var dispBtn2 = document.getElementById("dispBtn2");
+var file = document.getElementById("file");
+const ol1 = document.getElementById("ol1");
+
+
 // --------------------------------------------------------------------------------------
 
 // Die eigentlichen Funktionsaufrufe!
@@ -16,9 +21,21 @@ readDataFromFile("Liste.md");
 
 // --------------------------------------------------------------------------------------
 
+//Implementing file upload function and displaying filename in the console
 
+dispBtn2.addEventListener("click", load_File);
+file.addEventListener("change", printFileLocation);
 // Implementierungen der einzelnen Funktionen.
+// Load_file Function
+function load_File(){
+    document.getElementById("file").click();
+}
 
+function printFileLocation() {
+    if (this.files && this.files[0]) {
+        printToConsole(this.files[0].name);
+        }
+}
 
 // showList: Namen aus dem "persons"-Array der oben deklariert wurde, werden als Listenelemente einem anderen Listenelement untergeordnet und deren Text wird gleichgesetzt
 // mit dem Namen der Person an Index i.
@@ -26,9 +43,14 @@ function showList() {
 
     for (let i = 0; i < persons.length; i++){
 
-        let newListElement = document.createElement("li");
-        newListElement.innerText = persons[i].firstName + " " + persons[i].lastName;
-        ul1.appendChild(newListElement);
+        let newOrderedListElement = document.createElement("li");
+        let newUnorderedListElement = document.createElement("li");
+
+        newOrderedListElement.innerText = persons[i].firstName + " " + persons[i].lastName;
+        newUnorderedListElement.innerText = persons[i].firstName + " " + persons[i].lastName;
+
+        ol1.appendChild(newOrderedListElement);
+        ul1.appendChild(newUnorderedListElement);
     }
     document.getElementById('dispBtn1').disabled = true;
 }

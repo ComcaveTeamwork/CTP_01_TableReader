@@ -12,6 +12,7 @@
             
         </p>
             <div>
+                <input type="file" id="file" accept=".jpg, .png, .jpeg, .txt, .md">
                 <button id="dispBtn2">Datei auswählen</button>
                 <button id="dispBtn3">Datei laden (HTTP request)</button>
                 <button id="dispBtn4">Datei laden files API</button>
@@ -19,9 +20,19 @@
             <p id="para2"> 
         Zum Anzeigen der Namensliste bitte den Button drücken.
         </p>
-        <button id="dispBtn1">Display List</button>
-        <ul id="ul1">
-        </ul>
+         <div id="container">
+            <div id="unorderedList">
+                <button id="dispBtn1">Display List</button>
+                <ul id="ul1">
+                </ul>
+            </div>
+            <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <div id="orderedList">
+                <button id="dispBtn2">Display Ordered List</button>
+                <ol id="ol1" type=1>
+                </ol>
+            </div>
+        </div>   
         <hr>
             <div>
                 <button id="dispBtn5">display table</button>
