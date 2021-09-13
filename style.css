@@ -48,3 +48,6 @@ table {
     border-collapse: collapse;
   }
  
+  #file{
+    display: none;
+  }
