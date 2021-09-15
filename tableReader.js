@@ -82,6 +82,7 @@ function printToConsole(outputStr) {
 // siehe PR-Beschreibung
 // PR link: https://github.com/ComcaveTeamwork/CTP_01_TableReader/pull/44
 // Wiki Artikel: https://github.com/ComcaveTeamwork/CTP_01_TableReader/wiki/XMLHttpRequest
+
 function readDataFromFile (path)
 {
     var request = new XMLHttpRequest();
@@ -97,5 +98,35 @@ function readDataFromFile (path)
 
     request.send();
 }
+
+//diese Funktion liest die Datei und legt sie in ein String-Array
+// (eine Zeile als einzelnes Element in einem Array)
+
+
+document.getElementById('file').onchange = function(){
+    
+    var file = this.files[0];
+    var mDataAtt = [];
+
+    var reader = new FileReader();
+    reader.onload = function(progressEvent){
+
+  
+      // Loading the lines in to an array
+      var lines = this.result.split('\n');
+      for(var line = 0; line < lines.length; line++){
+          if (line != 1) {
+            console.log(lines[line]);
+            mDataAtt.push(lines[line]);
+              }
+      }
+
+    };
+    reader.readAsText(file);
+    printToConsole(mDataAtt);
+
+  };
+
+  
 
 
