@@ -9,7 +9,7 @@ const ul1 = document.getElementById("ul1");
 var dispBtn2 = document.getElementById("dispBtn2");
 var file = document.getElementById("file");
 const ol1 = document.getElementById("ol1");
-var stg_url;
+let stg_url;
 
 
 // --------------------------------------------------------------------------------------
@@ -17,7 +17,7 @@ var stg_url;
 // Die eigentlichen Funktionsaufrufe!
 dispBtn1.addEventListener("click", showList);
 pushNames();
-printToConsole(persons);
+//printToConsole(persons);
 readDataFromFile("Liste.md");
 
 // --------------------------------------------------------------------------------------
@@ -90,19 +90,27 @@ function readDataFromFile (path)
     request.addEventListener("load", function (event){
 
         if (request.status >= 200 & request.status < 300)
+        {
+        stg_url = request.responseText;
         console.log(request.responseText);
+        console.log(stg_url);
+        stringToarray (stg_url);
+        }
+
         
         
         else console.warn(request.statusText, request.responseText);
-        stg_url = request.responseText;
+        
     });
 
     request.send();
 }
-printToConsole(stg_url);
 
-function filesToarray (){
-var lines = stg_url;
+
+
+function stringToarray (stg_url){
+var lines = stg_url.split('\n');
+var mDataAtt = [];
 for(var line = 0; line < lines.length; line++){
     if (line != 1) {
       console.log(lines[line]);
@@ -112,7 +120,7 @@ for(var line = 0; line < lines.length; line++){
 printToConsole(mDataAtt);
 }
 
-filesToarray ();
+
 //diese Funktion liest die Datei und legt sie in ein String-Array
 // (eine Zeile als einzelnes Element in einem Array)
 
@@ -127,7 +135,7 @@ document.getElementById('file').onchange = function(){
 
   
       // Loading the lines in to an array
-      //var lines = this.result.split('\n');
+      var lines = this.result.split('\n');
       var lines = stg_url;
       for(var line = 0; line < lines.length; line++){
           if (line != 1) {
