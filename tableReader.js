@@ -11,6 +11,7 @@ var file = document.getElementById("file");
 const ol1 = document.getElementById("ol1");
 let stg_url;
 
+var file_type;
 
 // --------------------------------------------------------------------------------------
 
@@ -92,9 +93,10 @@ function readDataFromFile (path)
         if (request.status >= 200 & request.status < 300)
         {
         stg_url = request.responseText;
-        console.log(request.responseText);
-        console.log(stg_url);
-        stringToarray (stg_url);
+        //console.log(request.responseText);
+        //console.log(stg_url);
+        var lines = stg_url.split('\n');
+        stringToarray (lines);
         }
 
         
@@ -108,9 +110,10 @@ function readDataFromFile (path)
 
 
 
-function stringToarray (stg_url){
-var lines = stg_url.split('\n');
-var mDataAtt = [];
+function stringToarray (lines){
+    
+    var mDataAtt = [];
+
 for(var line = 0; line < lines.length; line++){
     if (line != 1) {
       console.log(lines[line]);
@@ -128,7 +131,7 @@ printToConsole(mDataAtt);
 document.getElementById('file').onchange = function(){
     
     var file = this.files[0];
-    var mDataAtt = [];
+    //var mDataAtt = [];
 
     var reader = new FileReader();
     reader.onload = function(progressEvent){
@@ -136,17 +139,19 @@ document.getElementById('file').onchange = function(){
   
       // Loading the lines in to an array
       var lines = this.result.split('\n');
-      var lines = stg_url;
+      stringToarray (lines);
+
+      /*var lines = stg_url;
       for(var line = 0; line < lines.length; line++){
           if (line != 1) {
-            console.log(lines[line]);
+            //console.log(lines[line]);
             mDataAtt.push(lines[line]);
               }
-      }
+      }*/
 
     };
     reader.readAsText(file);
-    printToConsole(mDataAtt);
+    //printToConsole(mDataAtt);
 
   };
 
