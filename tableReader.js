@@ -9,7 +9,7 @@ const ul1 = document.getElementById("ul1");
 var dispBtn2 = document.getElementById("dispBtn2");
 var file = document.getElementById("file");
 const ol1 = document.getElementById("ol1");
-let stg_url;
+// let stg_url;
 
 var file_type;
 
@@ -93,11 +93,12 @@ function readDataFromFile (path)
         if (request.status >= 200 & request.status < 300)
         {
         //console.log(request.responseText);
-        stg_url = request.responseText;
+        let responseStrg = request.responseText; // renamed stg_url to responseStrg and moved the declaration to local scope
         
         //console.log(stg_url);
-        var lines = stg_url.split('\n');
-        stringToarray (lines);
+        // var lines = stg_url.split('\n');
+        // stringToarray (lines);
+        printToConsole(stringToArrayHolger(responseStrg));
         }
 
         
@@ -134,30 +135,32 @@ function stringToArrayHolger(strgParam) {
 // (eine Zeile als einzelnes Element in einem Array)
 
 
-document.getElementById('file').onchange = function(){
-    
+document.getElementById('file').onchange = function () {
+
     var file = this.files[0];
     //var mDataAtt = [];
 
     var reader = new FileReader();
-    reader.onload = function(progressEvent){
+    reader.onload = function (progressEvent) {
 
-  
-      // Loading the lines in to an array
-      var lines = this.result.split('\n');
-      stringToarray (lines);
+        let responseStrg = this.result;
+        printToConsole(stringToArrayHolger(responseStrg));
 
-      /*var lines = stg_url;
-      for(var line = 0; line < lines.length; line++){
-          if (line != 1) {
-            //console.log(lines[line]);
-            mDataAtt.push(lines[line]);
-              }
-      }*/
+        // Loading the lines in to an array
+        // var lines = this.result.split('\n');
+        // stringToarray(lines);
+
+        /*var lines = stg_url;
+        for(var line = 0; line < lines.length; line++){
+            if (line != 1) {
+              //console.log(lines[line]);
+              mDataAtt.push(lines[line]);
+                }
+        }*/
 
     };
     reader.readAsText(file);
     //printToConsole(mDataAtt);
 
-  };
+};
 
