@@ -92,8 +92,9 @@ function readDataFromFile (path)
 
         if (request.status >= 200 & request.status < 300)
         {
-        stg_url = request.responseText;
         //console.log(request.responseText);
+        stg_url = request.responseText;
+        
         //console.log(stg_url);
         var lines = stg_url.split('\n');
         stringToarray (lines);
@@ -110,19 +111,24 @@ function readDataFromFile (path)
 
 
 
-function stringToarray (lines){
-    
+function stringToarray(lines) {
+
     var mDataAtt = [];
 
-for(var line = 0; line < lines.length; line++){
-    if (line != 1) {
-      console.log(lines[line]);
-      mDataAtt.push(lines[line]);
+    for (var line = 0; line < lines.length; line++) {
+        if (line != 1) {
+            console.log(lines[line]);
+            mDataAtt.push(lines[line]);
         }
-}
-printToConsole(mDataAtt);
+    }
+    printToConsole(mDataAtt);
 }
 
+function stringToArrayHolger(strgParam) {
+    let strgArray = strgParam.split('\n');
+    strgArray.splice(1,1);
+    return strgArray;
+}
 
 //diese Funktion liest die Datei und legt sie in ein String-Array
 // (eine Zeile als einzelnes Element in einem Array)
