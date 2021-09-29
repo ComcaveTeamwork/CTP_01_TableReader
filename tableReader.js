@@ -92,17 +92,9 @@ function readDataFromFile (path)
 
         if (request.status >= 200 & request.status < 300)
         {
-        //console.log(request.responseText);
         let responseStrg = request.responseText; // renamed stg_url to responseStrg and moved the declaration to local scope
-        
-        //console.log(stg_url);
-        // var lines = stg_url.split('\n');
-        // stringToarray (lines);
-        printToConsole(stringToArrayHolger(responseStrg));
+        printToConsole(stringToArray(responseStrg));
         }
-
-        
-        
         else console.warn(request.statusText, request.responseText);
         
     });
@@ -112,55 +104,30 @@ function readDataFromFile (path)
 
 
 
-function stringToarray(lines) {
 
-    var mDataAtt = [];
+//diese Funktion liest die Datei und legt sie in ein String-Array
+// (eine Zeile als einzelnes Element in einem Array)
 
-    for (var line = 0; line < lines.length; line++) {
-        if (line != 1) {
-            console.log(lines[line]);
-            mDataAtt.push(lines[line]);
-        }
-    }
-    printToConsole(mDataAtt);
-}
-
-function stringToArrayHolger(strgParam) {
+function stringToArray(strgParam) {
     let strgArray = strgParam.split('\n');
     strgArray.splice(1,1);
     return strgArray;
 }
 
-//diese Funktion liest die Datei und legt sie in ein String-Array
-// (eine Zeile als einzelnes Element in einem Array)
+
 
 
 document.getElementById('file').onchange = function () {
 
     var file = this.files[0];
-    //var mDataAtt = [];
-
     var reader = new FileReader();
     reader.onload = function (progressEvent) {
 
         let responseStrg = this.result;
-        printToConsole(stringToArrayHolger(responseStrg));
+        printToConsole(stringToArray(responseStrg));
 
-        // Loading the lines in to an array
-        // var lines = this.result.split('\n');
-        // stringToarray(lines);
-
-        /*var lines = stg_url;
-        for(var line = 0; line < lines.length; line++){
-            if (line != 1) {
-              //console.log(lines[line]);
-              mDataAtt.push(lines[line]);
-                }
-        }*/
-
-    };
+       };
     reader.readAsText(file);
-    //printToConsole(mDataAtt);
-
+   
 };
 
