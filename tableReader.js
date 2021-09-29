@@ -9,7 +9,7 @@ const ul1 = document.getElementById("ul1");
 var dispBtn2 = document.getElementById("dispBtn2");
 var file = document.getElementById("file");
 const ol1 = document.getElementById("ol1");
-// let stg_url;
+
 
 var file_type;
 
@@ -92,7 +92,7 @@ function readDataFromFile (path)
 
         if (request.status >= 200 & request.status < 300)
         {
-        let responseStrg = request.responseText; // renamed stg_url to responseStrg and moved the declaration to local scope
+        let responseStrg = request.responseText;
         printToConsole(stringToArray(responseStrg));
         }
         else console.warn(request.statusText, request.responseText);
@@ -105,9 +105,8 @@ function readDataFromFile (path)
 
 
 
-//diese Funktion liest die Datei und legt sie in ein String-Array
-// (eine Zeile als einzelnes Element in einem Array)
 
+// wandelt einen String in ein Array aus Strings um
 function stringToArray(strgParam) {
     let strgArray = strgParam.split('\n');
     strgArray.splice(1,1);
@@ -116,7 +115,7 @@ function stringToArray(strgParam) {
 
 
 
-
+//diese Funktion liest eine Datei ein mit Hilfe der Files API ein
 document.getElementById('file').onchange = function () {
 
     var file = this.files[0];
