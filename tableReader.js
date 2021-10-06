@@ -11,12 +11,14 @@ var file = document.getElementById("file");
 const ol1 = document.getElementById("ol1");
 
 
+var file_type;
+
 // --------------------------------------------------------------------------------------
 
 // Die eigentlichen Funktionsaufrufe!
 dispBtn1.addEventListener("click", showList);
 pushNames();
-printToConsole(persons);
+//printToConsole(persons);
 readDataFromFile("Liste.md");
 
 // --------------------------------------------------------------------------------------
@@ -89,13 +91,42 @@ function readDataFromFile (path)
     request.addEventListener("load", function (event){
 
         if (request.status >= 200 & request.status < 300)
-        console.log(request.responseText);
-
+        {
+        let responseStrg = request.responseText;
+        printToConsole(stringToArray(responseStrg));
+        }
         else console.warn(request.statusText, request.responseText);
-
+        
     });
 
     request.send();
 }
 
+
+
+
+
+// wandelt einen String in ein Array aus Strings um
+function stringToArray(strgParam) {
+    let strgArray = strgParam.split('\n');
+    strgArray.splice(1,1);
+    return strgArray;
+}
+
+
+
+//diese Funktion liest eine Datei ein mit Hilfe der Files API ein
+document.getElementById('file').onchange = function () {
+
+    var file = this.files[0];
+    var reader = new FileReader();
+    reader.onload = function (progressEvent) {
+
+        let responseStrg = this.result;
+        printToConsole(stringToArray(responseStrg));
+
+       };
+    reader.readAsText(file);
+   
+};
 
