@@ -59,20 +59,21 @@ function showList() {
 // Objekte in das Array "persons" gepusht.
 // Adding Indu-Pushfunction.
 // Funktion in Bearbeitung!
-function pushName(fName, lName) {
+function pushName(fName, lName, locaName) {
     persons.push({
         firstName: fName,
-        lastName: lName
+        lastName: lName,
+        location: locaName
     });
     }
 function pushNames (){
 
-    pushName("Anton","Mustermann");
-    pushName("Moritz","Mustermann");
-    pushName("Berta","Bertelsmann");
-    pushName("Julius","Cäsar");
-    pushName("Sabiha","Goekcen"); // added new names
-    pushName("Cahit","Arf");
+    pushName("Anton","Mustermann", "Duesseldorf");
+    pushName("Moritz","Mustermann", "Duisburg");
+    pushName("Berta","Bertelsmann", "Bielefeld");
+    pushName("Julius","Cäsar", "Rom");
+    pushName("Sabiha","Goekcen", "Side"); // added new names
+    pushName("Cahit","Arf", "Istanbul");
 }
 
 // Simple Ausgabe in die Konsole.
