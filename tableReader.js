@@ -10,7 +10,7 @@ var dispBtn2 = document.getElementById("dispBtn2");
 var file = document.getElementById("file");
 const ol1 = document.getElementById("ol1");
 // let stg_url;
-
+let personString;
 var file_type;
 
 // --------------------------------------------------------------------------------------
@@ -18,8 +18,11 @@ var file_type;
 // Die eigentlichen Funktionsaufrufe!
 dispBtn1.addEventListener("click", showList);
 pushNames();
-//printToConsole(persons);
+personstoStg();
+
+
 readDataFromFile("Liste.md");
+
 
 // --------------------------------------------------------------------------------------
 
@@ -66,6 +69,8 @@ function pushName(fName, lName) {
         lastName: lName
     });
     }
+    
+  
 function pushNames (){
 
     pushName("Anton","Mustermann");
@@ -75,6 +80,21 @@ function pushNames (){
     pushName("Sabiha","Goekcen"); // added new names
     pushName("Cahit","Arf");
 }
+
+ function personstoStg() {
+    
+    personString = "";
+    
+     for (let i=0; i < persons.length ; i++)
+     {
+    let objvalue = persons[i];
+    personString = personString + objvalue.firstName + " " + objvalue.lastName;
+    if ((i< persons.length -1))
+     personString = personString + ",";
+
+     }
+         printToConsole(personString);
+ }
 
 // Simple Ausgabe in die Konsole.
 function printToConsole(outputStr) {
