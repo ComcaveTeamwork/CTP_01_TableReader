@@ -81,6 +81,8 @@ function pushNames (){
     pushName("Cahit","Arf");
 }
 
+// Adding a new function to convert Persons array in to string variable
+
  function personstoStg() {
     
     personString = "";
@@ -93,6 +95,7 @@ function pushNames (){
      personString = personString + ",";
 
      }
+     // printing the value in to console
          printToConsole(personString);
  }
 
