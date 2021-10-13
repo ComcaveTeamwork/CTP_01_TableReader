@@ -13,6 +13,7 @@ const ol1 = document.getElementById("ol1");
 
 var file_type;
 
+
 // --------------------------------------------------------------------------------------
 
 // Die eigentlichen Funktionsaufrufe!
@@ -20,6 +21,12 @@ dispBtn1.addEventListener("click", showList);
 pushNames();
 //printToConsole(persons);
 readDataFromFile("Liste.md");
+// dispBtn5 togglet die liste sichtbar und unsichtbar
+document.getElementById("dispBtn5").addEventListener("click", function(button) {    
+    if (document.getElementById("table1").style.display === "none")             
+        document.getElementById("table1").style.display = "block";
+    else document.getElementById("table1").style.display = "none";
+ });
 
 // --------------------------------------------------------------------------------------
 
@@ -56,6 +63,9 @@ function showList() {
     }
     document.getElementById('dispBtn1').disabled = true;
 }
+
+
+
 
 // pushNames: Es werden Objekte mit zwei internen Variablen "firstName" und "lastName" erstellt. Die Wertzuweisungen erfolgen ebenfalls auf direktem Wege. Danach werden die
 // Objekte in das Array "persons" gepusht.
