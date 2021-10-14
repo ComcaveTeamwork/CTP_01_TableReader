@@ -85,14 +85,23 @@ function pushNames (){
 
  function personstoStg() {
     
-    personString = "";
+    personString = "firstname" + "   "+"lastname"+"\n"+"---------" + "   "+"---------"+"\n";
     
      for (let i=0; i < persons.length ; i++)
      {
-    let objvalue = persons[i];
-    personString = personString + objvalue.firstName + " " + objvalue.lastName;
+    let len = persons[i].firstName.length;
+    if (len < 9);
+        {
+            let addspc = 9 - len;
+           for(let e= 0; e < addspc ; e++) 
+           {
+            persons[i].firstName = persons[i].firstName + " ";
+           }
+            
+        }
+    personString = personString + persons[i].firstName + "   " + persons[i].lastName;
     if ((i< persons.length -1))
-     personString = personString + ",";
+     personString = personString + "\n";
 
      }
      // printing the value in to console
