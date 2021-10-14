@@ -1,8 +1,99 @@
+html {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: antiquewhite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background:linear-gradient(to right top, grey, black);
+    background-size: 250% 250%;
+    padding-top: 150px;
+}
+
+.con_Btn {
+    
+    width: auto;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+button {
+    
+    cursor: pointer;
+    outline: none;
+}
+.outline{
+        position: relative;
+        z-index: 3;
+        background: transparent;
+        color: #1172c4;
+        font-size: 14px;
+        border-color: #1172c4;
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 22px;
+        padding: 10px 40px;
+        text-transform: uppercase;
+        transition: all 0.2s linear;
+}
+.outline:hover {
+        color: white;
+        background: #1172c4;
+        border-color: white;
+        transition: all 0.2s linear;
+}
+.outline:active {
+        border-radius: 22px;
+}
+
+#container {
+    width: 100%;
+    display: inline-block;
+}
+  
+nav {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.431);
+    position: fixed;
+    top: 0;
+    width: 50%;
+    border-radius: 25px;
+}
+ul {
+      text-align: center;
+      list-style-type: none;
+      list-style-type: none;
+      margin: 0;
+      padding: 15px;
+}
+li {
+        display: inline;
+        font-family: "Fira Sans", sans-serif;
+        font-size: 17px;
+}
+a {
+          color: #f2f2f2;
+          text-decoration: none;
+          padding: 14px;
+}
+&:hover {
+            background-color: rgb(58, 13, 13);
+        }
+        
+.content {
+    text-align: center;
+}
+
 
 /** Styles */
 #container
 {
     display: flex;
+    margin: 0 auto;
+    padding-top: 5%;
 }
 /* 
 button {

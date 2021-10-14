@@ -2,40 +2,56 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Table Reader</title>
        <link rel="stylesheet" href="style.css">
     </head>
     <body >
+
+        <div id="navigation-bar">
+            <nav>
+              <ul>
+                <li><a href="tableReader.html">Home</a></li>
+                <li><a href=#>1</a></li>
+                <li><a href=#>2</a></li>
+                <li><a href=#>3</a></li>
+                <li><a href=#>4</a></li>
+                <a href="#" id="menu-icon"></a>
+              </ul>
+            </nav>
+          </div>
+        
         <h2>Einlesen von Daten aus Tabellen in Markdown Format und Ausgabe in HTML</h2>
         
         <p id="para1"> 
             
         </p>
-            <div>
+            <div class="con_Btn">
                 <input type="file" id="file" accept=".jpg, .png, .jpeg, .txt, .md">
-                <button id="dispBtn2">Datei auswählen</button>
-                <button id="dispBtn3">Datei laden (HTTP request)</button>
-                <button id="dispBtn4">Datei laden files API</button>
+                <button class="outline" id="dispBtn2">Datei auswählen</button>
+                <button class="outline" id="dispBtn3">Datei laden (HTTP request)</button>
+                <button class="outline" id="dispBtn4">Datei laden files API</button>
             </div>
             <p id="para2"> 
         Zum Anzeigen der Namensliste bitte den Button drücken.
         </p>
          <div id="container">
             <div id="unorderedList">
-                <button id="dispBtn1">Display List</button>
+                <button class="outline" id="dispBtn1">Display List</button>
                 <ul id="ul1">
                 </ul>
             </div>
             <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
             <div id="orderedList">
-                <button id="dispBtn2">Display Ordered List</button>
+                <button class="outline" id="dispBtn2">Display Ordered List</button>
                 <ol id="ol1" type=1>
                 </ol>
             </div>
         </div>   
         <hr>
             <div>
-                <button id="dispBtn5">display table</button>
+                <button class="outline" id="dispBtn5" value="display table">display table</button>
             </div>
 
         <!-- Tabellenformat  -->
