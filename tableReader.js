@@ -13,6 +13,7 @@ const ol1 = document.getElementById("ol1");
 
 var file_type;
 
+var tableCreated = false;
 // --------------------------------------------------------------------------------------
 
 // Die eigentlichen Funktionsaufrufe!
@@ -130,3 +131,39 @@ document.getElementById('file').onchange = function () {
    
 };
 
+function create_table (){
+
+    // guard verhindert das mehrfache erstellen von tabellen
+    if (tableCreated) return;
+
+    //body tl und tbody für tabellen erstellt 
+    var documentBody = document.body;
+    var table = document.createElement("tl");
+    var tableBody = document.createElement("tbody");
+  
+
+    // loop zum erstellen von row und cell in der tabelle und befüllen mit persons array
+    for (let i = 0; i < persons.length; i++){
+  
+        var row = document.createElement("tr");
+  
+        var firstNameCell = document.createElement("td");
+        var firstNameCellData = document.createTextNode(persons[i].firstName);
+        firstNameCell.appendChild(firstNameCellData);
+  
+        var lastNameCell = document.createElement("td");
+        var lastNameCellData = document.createTextNode(persons[i].lastName);
+        lastNameCell.appendChild(lastNameCellData);
+  
+        row.appendChild(firstNameCell);
+        row.appendChild(lastNameCell);
+  
+        tableBody.appendChild(row);
+  
+    }
+  
+    table.appendChild(tableBody);
+    documentBody.appendChild(table);
+    tableCreated = true;
+  
+  }
