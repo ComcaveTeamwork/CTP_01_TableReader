@@ -12,7 +12,7 @@ const ol1 = document.getElementById("ol1");
 
 
 var file_type;
-
+//guard
 var tableCreated = false;
 // --------------------------------------------------------------------------------------
 
@@ -130,7 +130,7 @@ document.getElementById('file').onchange = function () {
     reader.readAsText(file);
    
 };
-
+//funktion erstellt tabelle mit persons array bei click auf dispBtn5
 function create_table (){
 
     // guard verhindert das mehrfache erstellen von tabellen
@@ -164,6 +164,7 @@ function create_table (){
   
     table.appendChild(tableBody);
     documentBody.appendChild(table);
+    //guard
     tableCreated = true;
   
   }
