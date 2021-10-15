@@ -11,12 +11,15 @@ var file = document.getElementById("file");
 const ol1 = document.getElementById("ol1");
 
 
+var file_type;
+//guard
+var tableCreated = false;
 // --------------------------------------------------------------------------------------
 
 // Die eigentlichen Funktionsaufrufe!
 dispBtn1.addEventListener("click", showList);
 pushNames();
-printToConsole(persons);
+//printToConsole(persons);
 readDataFromFile("Liste.md");
 
 // --------------------------------------------------------------------------------------
@@ -91,13 +94,79 @@ function readDataFromFile (path)
     request.addEventListener("load", function (event){
 
         if (request.status >= 200 & request.status < 300)
-        console.log(request.responseText);
-
+        {
+        let responseStrg = request.responseText;
+        printToConsole(stringToArray(responseStrg));
+        }
         else console.warn(request.statusText, request.responseText);
-
+        
     });
 
     request.send();
 }
 
 
+
+
+
+// wandelt einen String in ein Array aus Strings um
+function stringToArray(strgParam) {
+    let strgArray = strgParam.split('\n');
+    strgArray.splice(1,1);
+    return strgArray;
+}
+
+
+
+//diese Funktion liest eine Datei ein mit Hilfe der Files API ein
+document.getElementById('file').onchange = function () {
+
+    var file = this.files[0];
+    var reader = new FileReader();
+    reader.onload = function (progressEvent) {
+
+        let responseStrg = this.result;
+        printToConsole(stringToArray(responseStrg));
+
+       };
+    reader.readAsText(file);
+   
+};
+//funktion erstellt tabelle mit persons array bei click auf dispBtn5
+function create_table (){
+
+    // guard verhindert das mehrfache erstellen von tabellen
+    if (tableCreated) return;
+
+    //body tl und tbody für tabellen erstellt 
+    var documentBody = document.body;
+    var table = document.createElement("tl");
+    var tableBody = document.createElement("tbody");
+  
+
+    // loop zum erstellen von row und cell in der tabelle und befüllen mit persons array
+    for (let i = 0; i < persons.length; i++){
+  
+        var row = document.createElement("tr");
+  
+        var firstNameCell = document.createElement("td");
+        var firstNameCellData = document.createTextNode(persons[i].firstName);
+        firstNameCell.appendChild(firstNameCellData);
+  
+        var lastNameCell = document.createElement("td");
+        var lastNameCellData = document.createTextNode(persons[i].lastName);
+        lastNameCell.appendChild(lastNameCellData);
+  
+        row.appendChild(firstNameCell);
+        row.appendChild(lastNameCell);
+  
+        tableBody.appendChild(row);
+  
+    }
+  
+    table.appendChild(tableBody);
+    documentBody.appendChild(table);
+    //guard
+    tableCreated = true;
+  
+  }
