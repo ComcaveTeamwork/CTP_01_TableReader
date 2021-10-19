@@ -58,17 +58,25 @@ nav {
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.431);
     position: fixed;
-    top: 0;
+    top: 10px;
     width: 50%;
     border-radius: 25px;
 }
-ul {
-      text-align: center;
-      list-style-type: none;
-      list-style-type: none;
+.nav_ul {
+      text-align: left;
+      height: auto;
       margin: 0;
       padding: 15px;
 }
+
+#ul1 {
+    width: 180px;
+}
+
+#ol1 {
+    width: 180px;
+}
+
 li {
         display: inline;
         font-family: "Fira Sans", sans-serif;
@@ -136,7 +144,7 @@ th {
 
 table {
     /* width: 33%; */       /* falls man möchte, dass die Tabelle z.B. immer 1/3 der länge der Seite einnimmt. */
-    border-collapse: collapse;
+    /* border-collapse: collapse; */ 
   }
  
   #file{
