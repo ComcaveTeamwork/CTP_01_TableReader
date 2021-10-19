@@ -12,7 +12,8 @@ const ol1 = document.getElementById("ol1");
 
 
 var file_type;
-
+//guard
+var tableCreated = false;
 // --------------------------------------------------------------------------------------
 
 // Die eigentlichen Funktionsaufrufe!
@@ -60,20 +61,22 @@ function showList() {
 // pushNames: Es werden Objekte mit zwei internen Variablen "firstName" und "lastName" erstellt. Die Wertzuweisungen erfolgen ebenfalls auf direktem Wege. Danach werden die
 // Objekte in das Array "persons" gepusht.
 // Adding Indu-Pushfunction.
-function pushName(fName, lName) {
+// Funktion in Bearbeitung!
+function pushName(fName, lName, locaName) {
     persons.push({
         firstName: fName,
-        lastName: lName
+        lastName: lName,
+        location: locaName
     });
     }
 function pushNames (){
 
-    pushName("Anton","Mustermann");
-    pushName("Moritz","Mustermann");
-    pushName("Berta","Bertelsmann");
-    pushName("Julius","Cäsar");
-    pushName("Sabiha","Goekcen"); // added new names
-    pushName("Cahit","Arf");
+    pushName("Anton","Mustermann", "Duesseldorf");
+    pushName("Moritz","Mustermann", "Duisburg");
+    pushName("Berta","Bertelsmann", "Bielefeld");
+    pushName("Julius","Cäsar", "Rom");
+    pushName("Sabiha","Goekcen", "Side"); // added new names
+    pushName("Cahit","Arf", "Istanbul");
 }
 
 // Simple Ausgabe in die Konsole.
@@ -129,4 +132,41 @@ document.getElementById('file').onchange = function () {
     reader.readAsText(file);
    
 };
+//funktion erstellt tabelle mit persons array bei click auf dispBtn5
+function create_table (){
 
+    // guard verhindert das mehrfache erstellen von tabellen
+    if (tableCreated) return;
+
+    //body tl und tbody für tabellen erstellt 
+    var documentBody = document.body;
+    var table = document.createElement("tl");
+    var tableBody = document.createElement("tbody");
+  
+
+    // loop zum erstellen von row und cell in der tabelle und befüllen mit persons array
+    for (let i = 0; i < persons.length; i++){
+  
+        var row = document.createElement("tr");
+  
+        var firstNameCell = document.createElement("td");
+        var firstNameCellData = document.createTextNode(persons[i].firstName);
+        firstNameCell.appendChild(firstNameCellData);
+  
+        var lastNameCell = document.createElement("td");
+        var lastNameCellData = document.createTextNode(persons[i].lastName);
+        lastNameCell.appendChild(lastNameCellData);
+  
+        row.appendChild(firstNameCell);
+        row.appendChild(lastNameCell);
+  
+        tableBody.appendChild(row);
+  
+    }
+  
+    table.appendChild(tableBody);
+    documentBody.appendChild(table);
+    //guard
+    tableCreated = true;
+  
+  }
