@@ -108,6 +108,8 @@ function pushNames (){
          printToConsole(personString);
  }
 
+ 
+
 // Simple Ausgabe in die Konsole.
 function printToConsole(outputStr) {
     console.log(outputStr);
@@ -145,6 +147,8 @@ function stringToArray(strgParam) {
     strgArray.splice(1,1);
     return strgArray;
 }
+
+
 
 
 
