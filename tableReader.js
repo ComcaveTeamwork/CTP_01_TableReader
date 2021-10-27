@@ -12,6 +12,7 @@ const ol1 = document.getElementById("ol1");
 // let stg_url;
 let personString;
 var file_type;
+let arr = persons;
 
 // --------------------------------------------------------------------------------------
 
@@ -85,28 +86,63 @@ function pushNames (){
 
  function personstoStg() {
     
-    personString = "firstname" + "    | "+"lastname"+"\n"+"---------" + "    | "+"---------"+"\n";
+    //personString = "Vorname" + "\t|\t"+"Nachname"+"\n"+"------" + "\t|\t"+"------"+"\n";
+    personString = "";
     
      for (let i=0; i < persons.length ; i++)
      {
     let len = persons[i].firstName.length;
-    if (len < 9);
+    if (i==0) {
+        let titleSpaces = longestString() - 7;
+        personString = personString + printableName("Vorname", "Nachname", titleSpaces);
+        personString = personString + printableName("-------", "--------", titleSpaces);
+    }
+    let addspc = longestString() - len;
+    personString = personString + printableName(persons[i].firstName, persons[i].lastName, addspc);
+    /*
+    if (len < longestString());
         {
-            let addspc = 9 - len;
+            let addspc = longestString() - len;
+            printToConsole(longestString());
            for(let e= 0; e < addspc ; e++) 
            {
             persons[i].firstName = persons[i].firstName + " ";
            }
             
         }
-    personString = personString + persons[i].firstName + "    | " + persons[i].lastName;
+    personString = personString + persons[i].firstName + "| " + persons[i].lastName;
     if ((i< persons.length -1))
      personString = personString + "\n";
-
+    */
      }
      // printing the value in to console
          printToConsole(personString);
  }
+
+ function printableName(vorname, nachname, numspaces){
+    let personString = vorname;
+    for(let e= 0; e < numspaces ; e++) 
+    {
+        personString = personString + " ";
+    } 
+    personString = personString + "| "+ nachname + "\n";
+    return personString;
+ }
+
+ // adding a function to get the length of the logest reason
+
+ function longestString(){
+    
+     let long1 = 7;
+    for (let a=0; a<arr.length; a++){
+        if (arr[a].firstName.length > long1){
+          long1= arr[a].firstName.length;
+        }
+  
+    }
+    return long1;
+  }
+  
 
  
 
