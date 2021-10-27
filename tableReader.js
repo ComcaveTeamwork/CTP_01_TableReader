@@ -70,7 +70,7 @@ function pushName(fName, lName, locaName) {
     });
     }
 function pushNames (){
-
+    persons = [];
     pushName("Anton","Mustermann", "Duesseldorf");
     pushName("Moritz","Mustermann", "Duisburg");
     pushName("Berta","Bertelsmann", "Bielefeld");
@@ -92,7 +92,7 @@ function readDataFromFile (path)
     var request = new XMLHttpRequest();
     request.open("GET", path);
     request.addEventListener("load", function (event){
-
+        
         if (request.status >= 200 & request.status < 300)
         {
         let responseStrg = request.responseText;
@@ -125,8 +125,19 @@ document.getElementById('file').onchange = function () {
     var reader = new FileReader();
     reader.onload = function (progressEvent) {
 
+    
+// speichert die Liste.md in personsArray 
         let responseStrg = this.result;
-        printToConsole(stringToArray(responseStrg));
+        let readLines = stringToArray(responseStrg); 
+        printToConsole(readLines);
+        persons = [];
+
+        for (let index = 0; index < readLines.length-1; index++) {
+            const element = readLines[index];
+            let splitTemp = element.split("|");
+            pushName(splitTemp[0], splitTemp[1], splitTemp[2])
+        }
+    
 
        };
     reader.readAsText(file);
