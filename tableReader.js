@@ -86,7 +86,7 @@ function pushNames (){
 
  function personstoStg() {
     
-    //personString = "Vorname" + "\t|\t"+"Nachname"+"\n"+"------" + "\t|\t"+"------"+"\n";
+    
     personString = "";
     
      for (let i=0; i < persons.length ; i++)
