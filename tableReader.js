@@ -125,7 +125,7 @@ function pushNames (){
     {
         personString = personString + " ";
     } 
-    personString = personString + "| "+ nachname + "\n";
+    personString = personString + " | "+ nachname + "\n";
     return personString;
  }
 
