@@ -93,28 +93,13 @@ function pushNames (){
      {
     let len = persons[i].firstName.length;
     if (i==0) {
-        let titleSpaces = longestString() - 7;
-        personString = personString + printableName("Vorname", "Nachname", titleSpaces);
-        personString = personString + printableName("-------", "--------", titleSpaces);
+        let titleSpaces = longestString() - 8;
+        personString = personString + printableName("Vorname ", "Nachname", titleSpaces);
+        personString = personString + printableName("--------", "--------", titleSpaces);
     }
     let addspc = longestString() - len;
     personString = personString + printableName(persons[i].firstName, persons[i].lastName, addspc);
-    /*
-    if (len < longestString());
-        {
-            let addspc = longestString() - len;
-            printToConsole(longestString());
-           for(let e= 0; e < addspc ; e++) 
-           {
-            persons[i].firstName = persons[i].firstName + " ";
-           }
-            
-        }
-    personString = personString + persons[i].firstName + "| " + persons[i].lastName;
-    if ((i< persons.length -1))
-     personString = personString + "\n";
-    */
-     }
+  
      // printing the value in to console
          printToConsole(personString);
  }
@@ -133,7 +118,7 @@ function pushNames (){
 
  function longestString(){
     
-     let long1 = 7;
+     let long1 = 8;
     for (let a=0; a<arr.length; a++){
         if (arr[a].firstName.length > long1){
           long1= arr[a].firstName.length;
