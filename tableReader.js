@@ -128,12 +128,12 @@ document.getElementById('file').onchange = function () {
     
 // speichert die Liste.md in personsArray 
         let responseStrg = this.result;
-        let readLines = stringToArray(responseStrg); 
-        printToConsole(readLines);
+        let readLinesArray = stringToArray(responseStrg); 
+        printToConsole(readLinesArray);
         persons = [];
 
-        for (let index = 0; index < readLines.length-1; index++) {
-            const element = readLines[index];
+        for (let index = 0; index < readLinesArray.length-1; index++) {
+            const element = readLinesArray[index];
             let splitTemp = element.split("|");
             pushName(splitTemp[0], splitTemp[1], splitTemp[2])
         }
