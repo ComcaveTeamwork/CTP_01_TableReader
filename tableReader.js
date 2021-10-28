@@ -55,8 +55,8 @@ function showList() {
         let newOrderedListElement = document.createElement("li");
         let newUnorderedListElement = document.createElement("li");
 
-        newOrderedListElement.innerText = persons[i].firstName + " " + persons[i].lastName + " ";
-        newUnorderedListElement.innerText = persons[i].firstName + " " + persons[i].lastName + " ";
+        newOrderedListElement.innerText = persons[i].firstName + " " + persons[i].lastName + " | " + persons[i].location;
+        newUnorderedListElement.innerText = persons[i].firstName + " " + persons[i].lastName + " | " + persons[i].location;
 
         ol1.appendChild(newOrderedListElement);
         ul1.appendChild(newUnorderedListElement);
