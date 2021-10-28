@@ -100,6 +100,7 @@ function pushNames (){
     let addspc = longestString() - len;
     personString = personString + printableName(persons[i].firstName, persons[i].lastName, addspc);
   
+     }
      // printing the value in to console
          printToConsole(personString);
  }
