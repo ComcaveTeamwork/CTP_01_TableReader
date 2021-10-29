@@ -9,6 +9,9 @@ const ul1 = document.getElementById("ul1");
 var dispBtn2 = document.getElementById("dispBtn2");
 var file = document.getElementById("file");
 const ol1 = document.getElementById("ol1");
+// let stg_url;
+let personString;
+var file_type;
 
 
 var file_type;
@@ -19,8 +22,11 @@ var tableCreated = false;
 // Die eigentlichen Funktionsaufrufe!
 dispBtn1.addEventListener("click", showList);
 pushNames();
-//printToConsole(persons);
+personstoStg();
+
+
 readDataFromFile("Liste.md");
+
 
 // --------------------------------------------------------------------------------------
 
@@ -69,6 +75,8 @@ function pushName(fName, lName, locaName) {
         location: locaName
     });
     }
+    
+  
 function pushNames (){
     persons = [];
     pushName("Anton","Mustermann", "Duesseldorf");
@@ -78,6 +86,33 @@ function pushNames (){
     pushName("Sabiha","Goekcen", "Side"); // added new names
     pushName("Cahit","Arf", "Istanbul");
 }
+
+// Adding a new function to convert Persons array in to string variable
+
+ function personstoStg() {
+    
+    personString = "firstname" + "    | "+"lastname"+"\n"+"---------" + "    | "+"---------"+"\n";
+    
+     for (let i=0; i < persons.length ; i++)
+     {
+    let len = persons[i].firstName.length;
+    if (len < 9);
+        {
+            let addspc = 9 - len;
+           for(let e= 0; e < addspc ; e++) 
+           {
+            persons[i].firstName = persons[i].firstName + " ";
+           }
+            
+        }
+    personString = personString + persons[i].firstName + "    | " + persons[i].lastName;
+    if ((i< persons.length -1))
+     personString = personString + "\n";
+
+     }
+     // printing the value in to console
+         printToConsole(personString);
+ }
 
 // Simple Ausgabe in die Konsole.
 function printToConsole(outputStr) {
