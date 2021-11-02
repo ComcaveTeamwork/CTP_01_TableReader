@@ -120,19 +120,15 @@ function pushNames (){
 
  function longestString(){
     
-     let long1 = 7;
+     let long1 = 8;
     for (let a=0; a<persons.length; a++){
         if (persons[a].firstName.length > long1){
           long1= persons[a].firstName.length;
-     let long1 = 8;
-    for (let a=0; a<arr.length; a++){
-        if (arr[a].firstName.length > long1){
-          long1= arr[a].firstName.length;
+     
         }
-  
-    }
     return long1;
   }
+ }
   
 
  
