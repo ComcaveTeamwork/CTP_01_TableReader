@@ -12,7 +12,7 @@ const ol1 = document.getElementById("ol1");
 // let stg_url;
 let personString;
 var file_type;
-let arr = persons;
+
 
 // --------------------------------------------------------------------------------------
 
@@ -99,21 +99,7 @@ function pushNames (){
     }
     let addspc = longestString() - len;
     personString = personString + printableName(persons[i].firstName, persons[i].lastName, addspc);
-    /*
-    if (len < longestString());
-        {
-            let addspc = longestString() - len;
-            printToConsole(longestString());
-           for(let e= 0; e < addspc ; e++) 
-           {
-            persons[i].firstName = persons[i].firstName + " ";
-           }
-            
-        }
-    personString = personString + persons[i].firstName + "| " + persons[i].lastName;
-    if ((i< persons.length -1))
-     personString = personString + "\n";
-    */
+    
      }
      // printing the value in to console
          printToConsole(personString);
@@ -134,9 +120,9 @@ function pushNames (){
  function longestString(){
     
      let long1 = 7;
-    for (let a=0; a<arr.length; a++){
-        if (arr[a].firstName.length > long1){
-          long1= arr[a].firstName.length;
+    for (let a=0; a<persons.length; a++){
+        if (persons[a].firstName.length > long1){
+          long1= persons[a].firstName.length;
         }
   
     }
