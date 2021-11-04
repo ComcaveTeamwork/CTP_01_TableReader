@@ -1,7 +1,7 @@
 # TableReader - Read tables in markdown format and present in html  
 
 Das CTP_01_TableReader Repository ist eine Lernumgebung um sich mit GitHub vertraut zu machen und die Teamarbeit an gemeinsamen Repositories zu üben.
-
+Es wurde um Rahmen eines Umschulungskurses für Fachinformatiker im August 2021 erstellt.  
 ## Motivation
 
 Das Ziel dieses Projekts ist die gemeinsame Entwicklung einer Software mit Hilfe der GitHub Plattform. Die Nutzung der Werkzeuge von GitHub, die Arbeit an gemeinsamen Repositories und das Teamwork selbst sind der Hauptzweck des Projekts ("Der Weg ist das Ziel"). 
@@ -17,7 +17,7 @@ Der Workflow wird im Detail im [**Wiki**](https://github.com/ComcaveTeamwork/CTP
 
 Die genaue Art der Koordination der Arbeit am Projekt wird sich im Laufe des Projekts ergeben und dann hier dokumentiert.
 Folgende Möglichkeiten wären zur Koordination u.a. denkbar:
-- [Discussions](https://github.com/ComcaveTeamwork/CTP_01_TableReader/discussions)
+- [Discussions](https://github.com/ComcaveTeamwork/CTP_01_TableReader/discussions) Hier könnt Ihr Euch melden wenn Ihr am Projekt teilnehmen wollt und bisher noch nicht im Kontakt mit dem Projektteam seid.
 - [Wiki](https://github.com/ComcaveTeamwork/CTP_01_TableReader/wiki)
 - [Vorschläge für Arbeitspakete](https://github.com/ComcaveTeamwork/CTP_01_TableReader/issues/new?assignees=&labels=%2B%2BVorschlag%2B%2B&template=vorschlag-arbeitspaket.md&title=%5BVorschlag%5D)
 
