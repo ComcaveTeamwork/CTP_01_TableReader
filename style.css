@@ -50,7 +50,7 @@ button {
 }
 
 #container {
-    width: 100%;
+    width: auto;
     display: inline-block;
 }
   
@@ -59,7 +59,7 @@ nav {
     background-color: rgba(0, 0, 0, 0.431);
     position: fixed;
     top: 10px;
-    width: 50%;
+    width: 880px;
     border-radius: 25px;
 }
 .nav_ul {
@@ -70,17 +70,24 @@ nav {
 }
 
 #ul1 {
-    width: 180px;
+    width: auto;
+    list-style-type: none;
+    
+    
 }
 
 #ol1 {
-    width: 180px;
+    width: auto;
+    list-style-type: none;
 }
 
-li {
-        display: inline;
+#nav_li {
+        float: left;
+        padding: 20px 15px 15px 15px;
+        margin: auto;
+        list-style-type: none;
         font-family: "Fira Sans", sans-serif;
-        font-size: 17px;
+        font-size: 20px;
 }
 a {
           color: #f2f2f2;
@@ -93,6 +100,14 @@ a {
         
 .content {
     text-align: center;
+}
+
+img {
+    float: right;
+    width: 50px;
+    height: 50px;
+    margin: 0px 0px 20px;
+    border-radius: 5%;
 }
 
 
